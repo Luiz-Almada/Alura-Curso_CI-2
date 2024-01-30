@@ -15,7 +15,7 @@ jobs:
         go_version: ['1.18', '1.17', '>=1.18']
         os: ['ubuntu-latest', 'ubuntu-18.04']
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v4
 
     - name: Set up Go
       uses: actions/setup-go@v5
@@ -39,6 +39,6 @@ jobs:
       matrix:
         os: ['ubuntu-latest', 'ubuntu-18.04']
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v4
     - name: Build
       run: go build -v main.go
