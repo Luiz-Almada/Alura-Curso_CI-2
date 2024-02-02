@@ -23,4 +23,22 @@ jobs:
         # Password or personal access token used to log against the Docker registry
         # Usa um SECRET do Github Actions
         password: ${{ secrets.PASSWORD_DOCKER_HUB }}
-              
+
+    - name: Build and push Docker images
+      # You may pin to the exact commit or the version.
+      # uses: docker/build-push-action@4a13e500e55cf31b7a5d59a38ab2040ab0f42f56
+      uses: docker/build-push-action@v5.1.0
+      with:
+        # Build's context is the set of files located in the specified PATH or URL
+        # Onde vai ser executado o build
+        context: .
+        # Path to the Dockerfile
+        file: ./Dockerfile
+        # Push is a shorthand for --output=type=registry
+        push: true
+        # List of tags
+        # O nome da imagem DEVE ser em letras minúsculas
+        # usuario/nome_imagem:nome_branch
+        tags: luizalmada/go_ci:${{ github.ref_name }}
+
+                            
