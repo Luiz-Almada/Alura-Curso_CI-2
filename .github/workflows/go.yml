@@ -62,7 +62,7 @@ jobs:
   docker:
     needs: build
     uses: ./.github/workflows/Docker.yml
-    # Libera os segredos do SECRET do Docker.yml
+    # Libera os segredos do SECRETS do Docker.yml
     secrets: inherit
     
     
