@@ -22,5 +22,5 @@ jobs:
         username: luizalmada
         # Password or personal access token used to log against the Docker registry
         # Usa um SECRET do Github Actions
-        password: 
+        password: ${{ secrets.PASSWORD_DOCKER_HUB }}
               
